@@ -16,6 +16,7 @@
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\tryAgain</sprite>
     <sprite>sprites\ballSprite</sprite>
+    <sprite>sprites\tramp</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -31,6 +32,8 @@
     <object>objects\objRobin</object>
     <object>objects\tryAgainObj</object>
     <object>objects\smokePuff</object>
+    <object>objects\objTramp</object>
+    <object>objects\object9</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

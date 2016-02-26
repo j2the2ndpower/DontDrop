@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>health</string>
+            <string>birdhealth</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -76,6 +76,54 @@
           <argument>
             <kind>0</kind>
             <string>effect_create_above(ef_smoke, x, y, 2, c_gray)</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>squawk3</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>-1</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.score</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>10</string>
           </argument>
         </arguments>
       </action>
@@ -131,6 +179,38 @@ physics_apply_force(x,y, -(dist/max_dist*100), -100);
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (y &gt; window_get_height()) {
+    instance_destroy();
+}
+if (phy_rotation &gt; 5 &amp;&amp; phy_rotation &lt; 180) {
+    phy_rotation -= 5;
+}
+
+if (phy_rotation &gt; 180 &amp;&amp; phy_rotation &lt; 355) {
+    phy_rotation += 5;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="player">
       <action>
         <libid>1</libid>
@@ -148,18 +228,14 @@ physics_apply_force(x,y, -(dist/max_dist*100), -100);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>health -= 10;
+            <string>birdhealth -= 10;
 
 var sound = choose(squawk, squawk2);
-if (health &lt;= 0) {
-    sound = squawk3;
-}
-
 if (!audio_is_playing(sound)) {
     audio_play_sound(sound, 10, false);
 }
 
-if (health &lt;= 0) {
+if (birdhealth &lt;= 0) {
     instance_destroy()
 }
 </string>
@@ -181,6 +257,33 @@ if (health &lt;= 0) {
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="8" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (phy_speed_x &gt;= 0) {
+    image_xscale=-1;
+} else {
+    image_xscale=1;
+}
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>

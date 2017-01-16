@@ -11,22 +11,24 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
-    <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\tryAgain</sprite>
     <sprite>sprites\ballSprite</sprite>
     <sprite>sprites\tramp</sprite>
-    <sprite>sprites\sprite7</sprite>
+    <sprite>sprites\sprite_angryLogo</sprite>
+    <sprite>sprites\sprite_angryLogoText</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\script_init.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
   </fonts>
   <objects name="objects">
-    <object>objects\object0</object>
-    <object>objects\GoLGrid</object>
     <object>objects\ground</object>
     <object>objects\player</object>
     <object>objects\game</object>
@@ -34,11 +36,10 @@
     <object>objects\tryAgainObj</object>
     <object>objects\smokePuff</object>
     <object>objects\objTramp</object>
-    <object>objects\object9</object>
-    <object>objects\angryLogo</object>
+    <object>objects\obj_angryLogo</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\roomSplash</room>
+    <room>rooms\room_splash</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

@@ -104,7 +104,7 @@
             <string>var offBy = x - device_mouse_x_to_gui(0);
 var knock = offBy;
 
-physics_apply_force(x, y, knock*2, -400);
+physics_apply_force(x, y, knock*2, -global.displayHeight/2);
 
 </string>
           </argument>

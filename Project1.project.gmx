@@ -65,9 +65,12 @@
     <object>objects\obj_angryLogo</object>
     <object>objects\obj_mute</object>
     <object>objects\obj_title</object>
+    <object>objects\obj_play</object>
+    <object>objects\obj_titleControl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_splash</room>
+    <room>rooms\room_title</room>
     <room>rooms\room0</room>
   </rooms>
   <help>

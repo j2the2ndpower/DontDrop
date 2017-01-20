@@ -131,7 +131,7 @@ if (!global.gameOver) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.started == true)
+            <string>
 var max_dist = window_get_width()/2;
 var h = window_get_height();
 var p = instance_nearest(x, y, player);

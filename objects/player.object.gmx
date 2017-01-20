@@ -27,32 +27,9 @@
             <kind>1</kind>
             <string>trampCount = 3;
 grav = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (grav == false) {
-x = display_get_width()/2
-y = display_get_height()/2
-}
+
+
+physics_apply_force(x, y, 0, -global.displayHeight/2);
 </string>
           </argument>
         </arguments>
@@ -103,7 +80,7 @@ y = display_get_height()/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (trampCount &gt; 0 &amp;&amp; global.started == true) {
+            <string>if (trampCount &gt; 0) {
     trampCount--;
     instance_create(x, y+70, objTramp);
     physics_apply_force(x, y, 0, -300);
@@ -132,14 +109,7 @@ y = display_get_height()/2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.started == false) {
-grav = true
-physics_apply_force(x, y, 0, -global.displayHeight/2);
-global.started = true
-exit;
-}
-
-var offBy = x - device_mouse_x_to_gui(0);
+            <string>var offBy = x - device_mouse_x_to_gui(0);
 var knock = offBy;
 
 physics_apply_force(x, y, knock*2, -global.displayHeight/2);

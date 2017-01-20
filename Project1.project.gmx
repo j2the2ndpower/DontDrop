@@ -19,6 +19,7 @@
     <sprite>sprites\tramp</sprite>
     <sprite>sprites\sprite_angryLogo</sprite>
     <sprite>sprites\sprite_angryLogoText</sprite>
+    <sprite>sprites\spr_mute</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -37,6 +38,7 @@
     <object>objects\smokePuff</object>
     <object>objects\objTramp</object>
     <object>objects\obj_angryLogo</object>
+    <object>objects\obj_mute</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_splash</room>

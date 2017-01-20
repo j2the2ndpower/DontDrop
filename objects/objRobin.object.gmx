@@ -76,7 +76,9 @@
           <argument>
             <kind>1</kind>
             <string>effect_create_above(ef_smoke, x, y, 2, c_gray)
+if (global.mute == 1) {
 audio_play_sound(squawk3, 10, false);
+}
 
 if (!global.gameOver) {
     global.score += 10;
@@ -191,10 +193,11 @@ if (phy_rotation &gt; 180 &amp;&amp; phy_rotation &lt; 355) {
           <argument>
             <kind>1</kind>
             <string>birdhealth -= 10;
-
+if (global.mute == 1) {
 var sound = choose(squawk, squawk2);
 if (!audio_is_playing(sound)) {
     audio_play_sound(sound, 10, false);
+}
 }
 
 if (birdhealth &lt;= 0) {

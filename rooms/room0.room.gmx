@@ -54,6 +54,7 @@ physics_world_gravity(0, global.displayHeight/80);</code>
   </views>
   <instances>
     <instance objName="game" x="32" y="96" name="inst_10C4AFF4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mute" x="32" y="1152" name="inst_02CFD259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

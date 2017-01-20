@@ -249,8 +249,8 @@ alarm[1] = room_speed
           <argument>
             <kind>1</kind>
             <string>var text = "";
-draw_set_font(font0);
-draw_set_halign(fa_right);
+draw_set_font(global.game_font);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
    
 if (global.gameOver &amp;&amp; !global.showingAd) {
@@ -269,8 +269,9 @@ if (global.gameOver &amp;&amp; !global.showingAd) {
 }
 
 draw_set_halign(fa_left);
+draw_set_halign(fa_top);
 draw_set_colour(c_white);
-draw_text(10, 30, global.score);
+draw_text(20, 40, string(global.score));
 
 </string>
           </argument>

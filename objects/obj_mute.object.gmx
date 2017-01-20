@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>image_xscale = display_get_width() / 1024;
-image_yscale = image_yscale;
+image_yscale = image_xscale;
 global.mute = 1;
 image_speed = 0;
-x = 0;
+x = 10;
 y = display_get_height();
 </string>
           </argument>

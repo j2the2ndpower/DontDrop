@@ -49,7 +49,9 @@
           <argument>
             <kind>1</kind>
             <string>if (x &lt; 0 || x &gt; room_width) {
-    global.gameOver = true;
+    if (global.gameOver == false) {
+        script_gameOver();
+    }
 }
 
 </string>
@@ -78,6 +80,8 @@
     trampCount--;
     instance_create(x, y+70, objTramp);
     physics_apply_force(x, y, 0, -300);
+} else if (global.gameOver == false) {
+    script_gameOver();
 }
 </string>
           </argument>
@@ -106,6 +110,49 @@ var knock = offBy;
 
 physics_apply_force(x, y, knock*2, -global.displayHeight/2);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="70">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Async calls from native code
+
+var type = async_load[? "type"];
+
+switch type {
+    case CBDidFailToLoadInterstitial:
+        result = "Did Fail To Load Interstitial";
+        global.showingAd = false;
+        break;
+    case CBDidDismissInterstitial:
+        result = "Did Dismiss Interstitial";
+        error = -1;
+        global.showingAd = false;
+        break;
+    case CBDidCloseInterstitial:
+        result = "Did Close Interstitial";
+        global.showingAd = false;
+        break;
+    default:
+        break;
+}
 </string>
           </argument>
         </arguments>

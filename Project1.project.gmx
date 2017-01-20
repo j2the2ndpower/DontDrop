@@ -3,7 +3,29 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>Chartboost SDK Extension GPS.gmez</name>
+      <exists>-1</exists>
+      <size>9855572</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Chartboost SDK Extension GPS.gmez</filename>
+    </datafile>
+  </datafiles>
+  <NewExtensions>
+    <extension index="0">extensions\Chartboost SDK Extension</extension>
+    <extension index="1">extensions\ChartboostSDKExtensionWithGPS</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\squawk</sound>
     <sound>sound\squawk2</sound>
@@ -25,6 +47,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script_init.gml</script>
+    <script>scripts\script_gameOver.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>

@@ -220,16 +220,17 @@ alarm[1] = 300;
             <kind>1</kind>
             <string>var text = "";
 draw_set_font(font0);
-draw_set_halign(fa_center);
+draw_set_halign(fa_right);
 draw_set_valign(fa_middle);
-
    
-if (global.gameOver) {   
-    text = "YOU LOSE";
-    draw_text(window_get_width()/2, window_get_height()/2-100, text);
+if (global.gameOver &amp;&amp; !global.showingAd) {
+    text = "GAME OVER"
+    draw_text(global.displayWidth/2, global.displayHeight/2-(global.displayHeight/8), text);
     
     if (is_undefined(tryAgainBtn)) {
-        tryAgainBtn = instance_create(window_get_width()/2, window_get_height()/2+100, tryAgainObj);
+        tryAgainBtn = instance_create(global.displayWidth/2, global.displayHeight/2+(global.displayHeight/8), tryAgainObj);
+        tryAgainBtn.image_xscale = global.displayWidth*0.75/331;
+        tryAgainBtn.image_yscale = tryAgainBtn.image_xscale;
     }
 } else if (!is_undefined(tryAgainBtn)) {
     with (tryAgainBtn) {

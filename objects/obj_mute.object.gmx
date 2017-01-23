@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,10 +27,32 @@
             <kind>1</kind>
             <string>image_xscale = display_get_width() / 1024;
 image_yscale = image_xscale;
-global.mute = 1;
 image_speed = 0;
 x = 10;
 y = display_get_height();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index = global.mute;
 </string>
           </argument>
         </arguments>
@@ -53,13 +75,10 @@ y = display_get_height();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.mute == 0 {
-image_index = global.mute;
-global.mute = 1;
-} else {
-image_index = global.mute;
-global.mute = 0;
-}
+            <string>global.mute = !global.mute;
+ini_open("data.ini");
+ini_write_real("Options", "mute", global.mute);
+ini_close();
 </string>
           </argument>
         </arguments>

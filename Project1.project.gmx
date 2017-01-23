@@ -43,16 +43,18 @@
     <sprite>sprites\sprite_angryLogoText</sprite>
     <sprite>sprites\spr_mute</sprite>
     <sprite>sprites\spr_namegraph</sprite>
+    <sprite>sprites\sprite_playButton</sprite>
+    <sprite>sprites\sprite_newHighScore</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script_init.gml</script>
     <script>scripts\script_gameOver.gml</script>
+    <script>scripts\script_draw_text_scaled.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
-    <font>fonts\font1</font>
   </fonts>
   <objects name="objects">
     <object>objects\ground</object>

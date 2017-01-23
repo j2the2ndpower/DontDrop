@@ -7,7 +7,8 @@ chartboost_init_sdk("58812ac543150f69800abe29", "5bf92e11e1663564bad927ef2e4aaa7
 global.showingAd = false;
 global.loseCount = 0;
 
-global.game_font = font0;
-if (display_get_dpi_x() < 200) {
-    global.game_font = font1;
-}
+ini_open("data.ini");
+global.highScore = ini_read_real("Scores", "high", 0);
+global.mute = ini_read_real("Options", "mute", 0);
+ini_close();
+

@@ -43,7 +43,7 @@ physics_fixture_set_collision_group(groundFix, 1);
 physics_fixture_bind_ext(groundFix, groundObj, 0, -h/2);
 physics_fixture_delete(groundFix);
 
-playerObj = instance_create(w/2, h/2, player);
+playerObj = instance_create(w/2, h/2 + (h/6), player);
 playerObj.image_xscale = playerScale;
 playerObj.image_yscale = playerScale;
 
@@ -221,19 +221,31 @@ alarm[1] = room_speed*10;
           <argument>
             <kind>1</kind>
             <string>var text = "";
-draw_set_font(global.game_font);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-   
+draw_set_font(font0);
+
 if (global.gameOver &amp;&amp; !global.showingAd) {
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_set_colour(c_white);
     text = "GAME OVER"
-    draw_text(global.displayWidth/2, global.displayHeight/2-(global.displayHeight/8), text);
-    
+    script_draw_text_scaled(global.displayWidth/2, global.displayHeight/2-(global.displayHeight/8), text, 0.75, 0);
+   
     if (is_undefined(tryAgainBtn)) {
         tryAgainBtn = instance_create(global.displayWidth/2, global.displayHeight/2+(global.displayHeight/8), tryAgainObj);
         tryAgainBtn.image_xscale = global.displayWidth*0.75/331;
         tryAgainBtn.image_yscale = tryAgainBtn.image_xscale;
     }
+
+    if (global.highScore == global.score) {
+        var hsScale = global.displayWidth/878;
+        draw_sprite_ext(sprite_newHighScore, 0, global.displayWidth/2, global.displayHeight/6, hsScale, hsScale, 0, c_white, 1);
+    }
+    
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_bottom);
+    draw_set_colour(c_white);
+    text = "High Score: " + string(global.highScore);
+    script_draw_text_scaled(global.displayWidth/2, global.displayHeight - 30, text, 0.75, 0);
 } else if (!is_undefined(tryAgainBtn)) {
     with (tryAgainBtn) {
         instance_destroy();

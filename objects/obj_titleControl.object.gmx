@@ -30,14 +30,14 @@ var w = display_get_width();
 var xx = display_get_width()/2
 var groundScale = h/270;
 var playerScale = w/4/149;
-var titleScale = w*0.75/393;
+var titleScale = w/878;
 
 
 groundObj = instance_create(w/2, h/2, ground);
 groundObj.image_xscale = groundScale;
 groundObj.image_yscale = groundScale;
 
-playerObj = instance_create(w/2, h/2, obj_play);
+playerObj = instance_create(w/2, h/2 + (h/6), obj_play);
 playerObj.image_xscale = playerScale;
 playerObj.image_yscale = playerScale;
 
